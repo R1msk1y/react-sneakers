@@ -3,39 +3,103 @@ import './App.css';
 
 function App() {
   return (
-    <div className="wrapper">
-    <header>
-    <div className='headerLeft'>
+    <div className="wrapper clear">
+    <header className='d-flex justify-between align-center p-40'>
+    <div className='d-flex align-center'>
 
     <img width={40} height={40} src='/img/header-logo.png'/>
-      <div className='headerInfo'>
-        <h3> React Sneakers</h3>
-        <p>Магазин лучших кросовок</p>
+      <div>
+        <h3 className='text-uppercase'> React Sneakers</h3>
+        <p className='opacity-5'>Магазин лучших кросовок</p>
       </div>
 
     </div> 
-    // left part END
+  
 
   
           
-    <ul className='headerRight'>
+    <ul className='d-flex'>
 
-<li>
-  <svg></svg> <span>1205 руб.</span>
+<li className='mr-30'>
+  <img width={18} height={18} src='/img/basket.svg'/>
+  <span>1205 руб.</span>
   </li>
 
 <li>
-  <svg></svg>
+  <img width={18} height={18} src='/img/user.svg'/>
   </li>
 
 </ul>
    
-    // right part END
+  
 
     </header>
 
-    <div className='content'>
-      <h1>Все кросовки</h1>
+    <div className='content p-40'>
+      <h1 className='mb-40'>Все кросcовки</h1>
+
+      <div className='d-flex'>
+      <div className='card'>
+        <img width={133} height={112} src='/img/sneakers/product1.jpg' alt='Sneakers' />
+        <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+        <div className='d-flex justify-between align-center'>
+          <div className='d-flex flex-column'>
+          <span>Цена:</span>
+          <b>12 999 руб.</b>
+          </div>
+       
+        <button className='button'>
+          <img width={11} height={11} src='/img/plus.svg' alt='plus'/>
+        </button>
+        </div>
+      </div>
+
+      <div className='card'>
+        <img width={133} height={112} src='/img/sneakers/product2.jpg' alt='Sneakers' />
+        <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+        <div className='d-flex justify-between align-center'>
+          <div className='d-flex flex-column'>
+          <span>Цена:</span>
+          <b>12 999 руб.</b>
+          </div>
+       
+        <button className='button'>
+          <img width={11} height={11} src='/img/plus.svg' alt='plus'/>
+        </button>
+        </div>
+      </div>
+
+      <div className='card'>
+        <img width={133} height={112} src='/img/sneakers/product3.jpg' alt='Sneakers' />
+        <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+        <div className='d-flex justify-between align-center'>
+          <div className='d-flex flex-column'>
+          <span>Цена:</span>
+          <b>12 999 руб.</b>
+          </div>
+       
+        <button className='button'>
+          <img width={11} height={11} src='/img/plus.svg' alt='plus'/>
+        </button>
+        </div>
+      </div>
+
+      <div className='card'>
+        <img width={133} height={112} src='/img/sneakers/product4.jpg' alt='Sneakers' />
+        <h5>Мужские Кроссовки Nike Blazer Mid Suede</h5>
+        <div className='d-flex justify-between align-center'>
+          <div className='d-flex flex-column'>
+          <span>Цена:</span>
+          <b>12 999 руб.</b>
+          </div>
+       
+        <button className='button'>
+          <img width={11} height={11} src='/img/plus.svg' alt='plus'/>
+        </button>
+        </div>
+      </div>
+      </div>
+     
     </div>
 
     </div>
