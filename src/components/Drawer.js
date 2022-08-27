@@ -1,13 +1,40 @@
-function Drawer (){
+import React from 'react';
+function Drawer ({clickOnRemoveBtn, items =[]}){
+
+
+
 
     return (
-        <div style={{display:'none'}} className='overlay'>
+        <div   className='overlay'>
         <div className='drawer'>
-        <h2 className='mb-30 d-flex justify-between'>Корзина <img className='removeBtn cu-p' src='/img/btn-remove.svg' alt='btn-remove'/></h2>
+        <h2 className='mb-30 d-flex justify-between'>Корзина <img onClick={clickOnRemoveBtn} className='removeBtn cu-p' src='/img/btn-remove.svg' alt='btn-remove'/></h2>
 
         <div className='items'>
 
-        <div className='cartItem d-flex align-center mb-20'>
+          {
+            items.map(function(obj){
+
+              return   <div className='cartItem d-flex align-center mb-20'>
+          
+              <div className='cartItemImg' style={{backgroundImage: `url(${obj.imageUrl})`}} >
+              </div>
+              <div className='mr-20 flex'>
+                <p className='mb-5'>{obj.name}</p>
+                <b>{obj.price} руб.</b>   
+              </div>
+              <img className='removeBtn' src='/img/btn-remove.svg' alt='btn-remove'/>
+            </div>
+    
+
+            })
+
+            
+          
+          }
+
+        
+       
+        {/* <div className='cartItem d-flex align-center mb-20'>
           
           <div className='cartItemImg' style={{backgroundImage: 'url(/img/sneakers/product1.jpg)'}} >
           </div>
@@ -27,7 +54,7 @@ function Drawer (){
             <b>12 999 руб.</b>   
           </div>
           <img className='removeBtn' src='/img/btn-remove.svg' alt='btn-remove'/>
-        </div>
+        </div> */}
 
 
 

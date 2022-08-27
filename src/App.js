@@ -4,46 +4,25 @@ import React from 'react';
 import Card from './components/Card';
 import Header from './components/Header';
 import Drawer from './components/Drawer';
-const arr = [
-  {
-    name: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: 12999,
-    imageUrl: '/img/sneakers/product1.jpg' 
-  },
-  {
-    name: 'Мужские Кроссовки Nike Air Max 270',
-    price: 9000,
-    imageUrl: '/img/sneakers/product2.jpg' 
-  },
-  {
-    name: 'Мужские Кроссовки Nike Blazer Mid Suede',
-    price: 8499,
-    imageUrl: '/img/sneakers/product3.jpg' 
-  },
-  {
-    name: 'Кроссовки Puma X Aka Boku Future Rider',
-    price: 8999,
-    imageUrl: '/img/sneakers/product4.jpg' 
 
-  }
-
-
-];
-
+ 
 function App() {
+const [cartOpened, setCartOpened] = React.useState(false);
+const [items, setItems] = React.useState([]);
+const [cartItems, setCartItems] = React.useState([
+]);
 
-  // const [count, setCount] = React.useState(5);
 
-  // const plus = () => {
+ React.useEffect(()=>{
+  fetch('https://6308f159722029d9dddbe646.mockapi.io/items').then(res =>{
+    return res.json();
+   }).then(json =>{
+    setItems(json);
+   })
 
-  //   setCount(count +1);
+ }, []);
 
-  // }
 
-  // const minus = () => {
-
-  //   setCount(count -1);
-  // }
 
 
 
@@ -56,11 +35,29 @@ function App() {
       </div> */}
 
     
-        <Drawer />
+    {cartOpened ? 
+    <Drawer
+    items={cartItems}
+    clickOnRemoveBtn = {()=>{
+      return setCartOpened(false);
+
+    }}
+
+    /> : 
+    null}
+        
       
       
 
-      <Header />
+      <Header
+
+      clickOnCart = {() => {
+        return setCartOpened(true);
+        
+      }}
+      
+      
+      />
 
 
     <div className='content p-40'>
@@ -74,10 +71,10 @@ function App() {
       
       </div>
 
-      <div className='d-flex'>
+      <div className='d-flex flex-wrap'>
       
 
-      {arr.map(function(item){
+      {items.map(function(item){
 
         return <Card
         title = {item.name}
