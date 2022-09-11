@@ -1,3 +1,4 @@
+@import "./../vars";
 .cart-header {
     display: grid;
     grid-template-columns: 2fr repeat(3, 3fr) 1fr;
@@ -12,13 +13,13 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
 
-    // @media (max-width: $mobile) {
-    //     height: 1px;
-    //     padding: 0;
-    //     & > * {
-    //         display: none;
-    //     }
-    // }
+    @media (max-width: $mobile) {
+        height: 1px;
+        padding: 0;
+        & > * {
+            display: none;
+        }
+    }
 }
 
 .cart-header__title {
