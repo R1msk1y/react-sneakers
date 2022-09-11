@@ -4,6 +4,7 @@ import "./_base.scss"
 import "./_section-cart.scss"
 import Title from "./Title/Index"
 import Cart from "./Cart"
+import Product from "./Product"
 
 
 
@@ -23,6 +24,7 @@ function App() {
         <div className="container">
 
             <Cart />
+            
 
         </div>
     </div>
