@@ -28,7 +28,7 @@ const Cart = () => {
                     return {
                         ...product,
                         count: ++product.count,
-                        priceTotal: product.count * product.price
+                        priceTotal: ++product.count * product.price
                         
                     };
                 }
@@ -49,8 +49,8 @@ const Cart = () => {
 
                     return {
                         ...product,
-                        count: product.count - 1 > 1 ? --product.count : 1,
-                        priceTotal: product.count * product.price
+                        count: product.count - 1 > 1 ? product.count -1 : 1,
+                        priceTotal: (product.count - 1 > 1 ? --product.count : 1) * product.price,
                         
                     };
                 }
