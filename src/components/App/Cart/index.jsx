@@ -8,11 +8,47 @@ const Cart = () => {
 
     const [cart, setCart] = useState(data);
 
+    const deleteProduct = (id) => {
+
+        console.log('Delete!!', id);
+
+        setCart((cart)=>{
+            return cart.filter((product)=> {return id !== product.id})
+        })
+
+    };
+
+    const increase = (id) => {
+        console.log('Increase', id);
+
+        setCart((cart)=>{
+            return cart.map((product) => {
+
+                if(product.id === id){
+
+                    return {
+                        ...product,
+                        count: ++product.count,
+                        priceTotal: product.count * product.price
+                        
+                    };
+                }
+
+                return product
+
+            })
+        })
+
+    }
+
     const products = cart.map((product)=> {
 
         return <Product
         key = {product.id}
         product = {product}
+        deleteProduct = {deleteProduct}
+        increase = {increase}
+        
         
         />
 
